@@ -4,13 +4,19 @@
 # 2 = atender os alunos que realizou a menor quantidade de disciplinas
 from modules.subject import Subject
 from modules.student import Student
+import modules.dados_dos_periodos as injetarDados
+from modules.subjects import *
 
-p1 = Subject('Programação 1', '', ['Segunda, 13:30 - 15:10', 'Quarta, 13:30 - 15:10'], 1)
+#p1 = Subject('Programação 1', '', ['Segunda, 13:30 - 15:10', 'Quarta, 13:30 - 15:10'], 1)
 
-disciplinas = [p1]
-print(disciplinas[0].info())
+#disciplinas = [p1]
+#print(disciplinas[0].info())
 
-aluno1 = Student('Eduarda Bianca Alessandra Campos', 22050001, 1, [p1])
+#aluno1 = Student('Eduarda Bianca Alessandra Campos', 22050001, 1, [p1])
 
-alunos = [aluno1]
-print(alunos[0].info())
+#alunos = [aluno1]
+#print(alunos[0].info())
+
+
+injetarDados.main()
+print(disc)
