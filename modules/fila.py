@@ -60,11 +60,3 @@ class Queue:
 
     def __str__(self):
         return self.__repr__()
-
-
-fila = Queue()
-fila.push('quadrado')
-fila.push('triangulo')
-print(fila)
-fila.pop()
-print(fila)
