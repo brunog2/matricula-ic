@@ -1,4 +1,4 @@
-from modules.subjects import *
+from modules.data import *
 
 class Subject:
     def __init__(self, name, requirements, schedule, availableAt):
@@ -6,13 +6,14 @@ class Subject:
         self.requirements = requirements
         self.schedule = schedule
         self.availableAt = availableAt
-        disc.append(self.getInfo())
+        disciplinas.append(self.getInfo())
 
     def getInfo(self):
-        output = {
+        info = {
             'name': self.name,
             'requirements': self.requirements,
             'schedule': self.schedule,
             'availableAt': self.availableAt
         }
-        return output
+        
+        return info

@@ -1,20 +1,27 @@
+from modules.data import *
+
 class Student:
-    def init(self, name, registration, period, enrolledSubjects, status):
+    def __init__(self, name, registration, period, enrolledSubjects):
         self.name = name
         self.registration = registration
         self.period = period
-        self.enrolledSubjects = enrolledSubjects
-        self.status = status
+        self.enrolledSubjects = enrolledSubjects        
+        self.status = 'Calouro' if self.period == 1 else 'Formando' if self.period == 8 else ''
+        
+        if all(subject['availableAt'] == self.period for subject in self.enrolledSubjects): self.flow = 'Fluxo Padrão'
+        else: self.flow = 'Fluxo Individual'
 
+        alunos.append(self.getInfo())
 
-    def info(self):
-        if self.period == 1:
-            self.status = 'calouro'
-        elif self.period >= 6:
-            self.status = 'formando'
-        elif self.period:
-            pass
+    def getInfo(self):
+        subjects = [subject for subject in self.enrolledSubjects]
+        info = {
+            'name': self.name,
+            'registration': self.registration,
+            'period': self.period,
+            'enrolledSubjects': subjects,
+            'status': self.status,
+            'flow': self.flow
+            }
 
-        subjects = [subject.info() for subject in self.enrolledSubjects]
-        output = {'Nome': self.name, 'Matrícula': self.registration, 'Período': self.period, 'Disciplinas matriculadas': subjects, 'Status': self.status}
-        return output
+        return info

@@ -2,10 +2,12 @@
 # 0 = calouro, formando, fluxo contínuo e fluxo individual
 # 1 = a remoção que atende uma troca; a remoção que atende uma inserção, a remoção, a troca e a inserção
 # 2 = atender os alunos que realizou a menor quantidade de disciplinas
+from calendar import c
 from modules.subject import Subject
 from modules.student import Student
-import modules.dados_dos_periodos as injetarDados
 from modules.subjects import *
+from modules.students import *
+from modules.data import *
 
 #p1 = Subject('Programação 1', '', ['Segunda, 13:30 - 15:10', 'Quarta, 13:30 - 15:10'], 1)
 
@@ -17,6 +19,5 @@ from modules.subjects import *
 #alunos = [aluno1]
 #print(alunos[0].info())
 
-
-injetarDados.main()
-print(disc)
+print(alunos)
+#print(disciplinas)
