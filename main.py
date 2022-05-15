@@ -20,6 +20,21 @@ from modules.data import *
 #alunos = [aluno1]
 #print(alunos[0].info())
 
+def searchStudent(reg):
+    if int(reg) > len(alunos) + 1:
+        print('Matrícula inválida')
+        return
+    
+    student = None        
+    for student1 in alunos:
+        if reg == student1.getInfo()['registration']:
+            student = student1
+
+    if student == None:
+        print('Aluno não encontrado')
+    
+    return student
+
 def createStudent():
     print('\n--- Cadastrar novo aluno no sistema ---')
 
@@ -27,7 +42,7 @@ def createStudent():
     reg = f"{len(alunos)+1:08}"
     period = 1
     enrolledSubjects = []
-    student = Student(name, reg, period, enrolledSubjects)
+    Student(name, reg, period, enrolledSubjects)
 
     print(f'Novo aluno com matrícula {reg} cadastrado')
     return
@@ -35,24 +50,37 @@ def createStudent():
 def readStudent():
     print('\n--- Ver detalhes do aluno ---')
     reg = input('Matrícula do estudante: ')
-
+    
+    student = searchStudent(reg)
+    if student != None: print(student.getInfo())
+    
     return
 
 def updateStudent():
     print('\n--- Atualizar dados do aluno ---')
     reg = input('Matrícula do estudante: ')
 
+    student = searchStudent(reg)
+    if student != None: print(student.getInfo())
+    
     return
 
 def deleteStudent():
     print('\n--- Deletar aluno do sistema ---')
     reg = input('Matrícula do estudante: ')
 
+    student = searchStudent(reg)
+    if student != None:
+        alunos.remove(student)
+        print('Aluno deletado')
+
     return
 
 def listAllStudent():
     print('\n--- Listar todos os alunos ---')
-    print(alunos)
+    for x in range(len(alunos)):
+        aluno = alunos[x]
+        print(f'{x} - {aluno.getInfo()}\n')
 
     return
 

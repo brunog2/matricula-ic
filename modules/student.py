@@ -11,7 +11,7 @@ class Student:
         if all(subject['availableAt'] == self.period for subject in self.enrolledSubjects): self.flow = 'Fluxo Padrão'
         else: self.flow = 'Fluxo Individual'
 
-        alunos.append(self.getInfo())
+        alunos.append(self)
 
     def getInfo(self):
         subjects = [subject for subject in self.enrolledSubjects]
