@@ -8,9 +8,9 @@ aluno1 = Student('Vicente Raimundo Anthony da Rosa', '79517258', 1, [p1.getInfo(
 
 aluno2 = Student('Matheus Felipe de Melo Ferreira', '25293645', 1, [p1.getInfo(), cse.getInfo(), logica.getInfo(), md.getInfo(), cdi.getInfo()])
 
-aluno3 = Student('Matheus Augusto do Santos Miranda', '20212219', 2, [estdd.getIngo(), bd.getInfo(), oac.getInfo(), ga.getInfo()])
+aluno3 = Student('Matheus Augusto do Santos Miranda', '20212219', 2, [estdd.getInfo(), bd.getInfo(), oac.getInfo(), ga.getInfo()])
 
-aluno4 = Student('Thassia Maria Bittencourt', '36947586', 2, [estdd.getIngo(), bd.getInfo(), oac.getInfo(), ga.getInfo()])
+aluno4 = Student('Thassia Maria Bittencourt', '36947586', 2, [estdd.getInfo(), bd.getInfo(), oac.getInfo(), ga.getInfo()])
 
 aluno5 = Student('João Alves da Silva', '93949582', 3, [redes.getInfo(), grafos.getInfo(), pe.getInfo(), al.getInfo()])
 

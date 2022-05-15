@@ -21,27 +21,57 @@ from modules.data import *
 #print(alunos[0].info())
 
 def createStudent():
+    print('\n--- Cadastrar novo aluno no sistema ---')
+
+    name = input('Nome do estudante: ')
+    reg = f"{len(alunos)+1:08}"
+    period = 1
+    enrolledSubjects = []
+    student = Student(name, reg, period, enrolledSubjects)
+
+    print(f'Novo aluno com matrícula {reg} cadastrado')
     return
 
 def readStudent():
+    print('\n--- Ver detalhes do aluno ---')
+    reg = input('Matrícula do estudante: ')
+
     return
 
 def updateStudent():
+    print('\n--- Atualizar dados do aluno ---')
+    reg = input('Matrícula do estudante: ')
+
     return
 
 def deleteStudent():
+    print('\n--- Deletar aluno do sistema ---')
+    reg = input('Matrícula do estudante: ')
+
     return
 
 def listAllStudent():
+    print('\n--- Listar todos os alunos ---')
+    print(alunos)
+
     return
 
 def enrollStudent():
+    print('\n--- Matricular aluno em disciplina ---')
+    reg = input('Matrícula do estudante: ')
+
     return
 
 def adjustStudent():
+    print('\n--- Ajuste de aluno ---')
+    reg = input('Matrícula do estudante: ')
+
     return
 
 def readjustStudent():
+    print('--- Reajuste de aluno ---')
+    reg = input('Matrícula do estudante: ')
+
     return
 
 studentOptions = [
@@ -61,16 +91,15 @@ print('SGM - Sistema de Gerenciamento de Matrículas')
 while True:
     print('\nServiços disponíveis:')
     for option in studentOptions: 
-        for key, value in option.items(): print(key)
-    
+        for key, value in option.items(): print(key)    
 
-    try:
-        option = int(input('Sua opção: '))        
-        list(studentOptions[option-1].values())[0]()
+    option = int(input('Sua opção: '))        
+    list(studentOptions[option-1].values())[0]()
+    #try:
+        #option = int(input('Sua opção: '))        
+        #list(studentOptions[option-1].values())[0]()
 
-    except Exception:
-        print('\nOpção inválida')
-
-
+    #except Exception:
+    #    print('\nOpção inválida')
 
 #print(disciplinas)
