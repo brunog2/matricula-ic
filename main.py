@@ -40,15 +40,19 @@ def addToQueue(studentType, action):
         topic = queue[-i]
         lastAdded = queue[-1]
         
-        if topic <= lastAdded:
-            index = -i+1
+        if topic[0] <= lastAdded[0]:
+            # dividindo o array em dois para fazer a permuta de elementos
+            index = len(queue)-i+1
+            queueAhead = queue[index: -1]
+            queue = queue[:index]
+            # adicionando a função na sua respectiva posição de prioridade
+            queue.append(lastAdded)
+            # juntando os dois arrays novamente
+            queue = queue+queueAhead
             
-            bkp = queue[index]    
-
-            for x in range(index+1, len(queue)-2):
-                queue[x+1] = queue[x]    
-
-            queue[index] = lastAdded
+            # fazendo backup do elemento adiante ao
+            # que será permutado
+            
 
 
 def searchStudent(reg):
